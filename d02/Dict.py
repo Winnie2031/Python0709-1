@@ -10,6 +10,6 @@ else :
     winner = '使用者' if user < pc else '電腦'
 
 result = '比{0}, 使用者的點數:{1} 電腦的點數:{2} 贏家: {3}'\
-         .format(flag, user, pc, winner)
+         .format('大' if flag== 1 else '小', user, pc, winner)
 print(result)
 
