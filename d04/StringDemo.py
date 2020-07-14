@@ -12,3 +12,5 @@ print(password.isdigit()) # 是否僅包含數字
 
 path = r'C:\nba\tiket.txt'
 print(path)
+path = 'C:\\nba\\tiket.txt'
+print(path)
