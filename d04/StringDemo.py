@@ -10,4 +10,5 @@ print(password.isalpha()) # 是否僅包含英文文字
 print(password.isalnum()) # 是否包含英文或數字
 print(password.isdigit()) # 是否僅包含數字
 
-
+path = r'C:\nba\tiket.txt'
+print(path)
