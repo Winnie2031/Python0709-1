@@ -15,10 +15,13 @@ def menu():
     if id == 1:
         print('您選擇的是 1')
         calcBMI()
+        input('按下任意鍵繼續...')
         menu()
     elif id == 2:
         print('您選擇的是 2')
+        print('謝謝您的使用')
     else :
         print('選擇錯誤')
+        menu()
 
 menu()
