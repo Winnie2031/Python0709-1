@@ -10,7 +10,7 @@ def areaNum(area):
         return '21'
 
 # 驗證身份證字號
-id    = 'M140051653'
+id    = input('請輸入身份證字號: ')
 id2   = areaNum(id[0])+id[1]+id[2]+id[3]+id[4]+id[5]+id[6]+id[7]+id[8]+id[9]
 delta = '19876543211'
 print(id)
