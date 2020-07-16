@@ -22,7 +22,7 @@ while amount > 0 :
         print('恭喜使用者答對了')
         break
 
-    print('按下Enter讓電腦猜...')
+    print('%d~%d之間猜一數字, 按下Enter讓電腦猜...' % (min, max))
     sys.stdin.read(1)
 
     # 電腦猜
