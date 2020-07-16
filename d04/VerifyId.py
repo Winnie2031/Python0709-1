@@ -1,6 +1,17 @@
+# 取得地區號碼
+def areaNum(area):
+    if area == 'A':
+        return '10'
+    elif area == 'F':
+        return '15'
+    elif area == 'H':
+        return '17'
+    elif area == 'M':
+        return '21'
+
 # 驗證身份證字號
 id    = 'M140051653'
-id2   = '21'+id[1]+id[2]+id[3]+id[4]+id[5]+id[6]+id[7]+id[8]+id[9]
+id2   = areaNum(id[0])+id[1]+id[2]+id[3]+id[4]+id[5]+id[6]+id[7]+id[8]+id[9]
 delta = '19876543211'
 print(id)
 print(id2)
