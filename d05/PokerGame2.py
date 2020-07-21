@@ -40,32 +40,32 @@ while True:
 # PC 拿牌
 count_pc = 0
 p2 = poker.pop()
-sum = getScore(p2)
-print('PC已拿:', p2, '總分:', sum)
+sum2 = getScore(p2)
+print('PC已拿:', p2, '總分:', sum2)
 print('剩餘:', poker)
 
 while True:
     time.sleep(2)  # 延遲 2 秒
-    if sum >= 9:  # 電腦若為 9 點（含）以上不需補牌
+    if sum2 >= 9:  # 電腦若為 9 點（含）以上不需補牌
         break
-    elif sum < 7: # 電腦少於 7 點點需強迫補牌
+    elif sum2 < 7: # 電腦少於 7 點點需強迫補牌
         p = poker.pop()
-        sum += getScore(p)
-        print('PC再拿:', p, '總分:', sum)
-    elif sum == 7 or sum == 7.5:
+        sum2 += getScore(p)
+        print('PC再拿:', p, '總分:', sum2)
+    elif sum2 == 7 or sum2 == 7.5:
         amount = poker.count('A') + poker.count(2) + poker.count(3)
         if amount >= 10:
             p = poker.pop()
-            sum += getScore(p)
-            print('PC再拿:', p, '總分:', sum)
-    elif sum == 8 or sum == 8.5:
+            sum2 += getScore(p)
+            print('PC再拿:', p, '總分:', sum2)
+    elif sum2 == 8 or sum2 == 8.5:
         amount = poker.count('A') + poker.count(2)
         if amount >= 7:
             p = poker.pop()
-            sum += getScore(p)
-            print('PC再拿:', p, '總分:', sum)
+            sum2 += getScore(p)
+            print('PC再拿:', p, '總分:', sum2)
 
-    if sum > 10.5:
+    if sum2 > 10.5:
         print('PC 爆了')
         break
     else:
