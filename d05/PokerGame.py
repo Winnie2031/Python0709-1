@@ -5,17 +5,16 @@ def getScore(p):
         return 1
     elif p == 'J' or p == 'Q' or p == 'K':
         return 0.5
-    return p
+    return p  # 2~10的數字
 
 poker = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'] * 4
 random.shuffle(poker)  # 洗牌
 print(poker)
 
-# 牌局開始先發二張
+# 牌局開始先發一張
 p1 = poker.pop()
-p2 = poker.pop()
-sum = getScore(p1) + getScore(p2)
-print('已拿:', p1, p2, '總分:', sum)
+sum = getScore(p1)
+print('已拿:', p1, '總分:', sum)
 print('剩餘:', poker)
 
 # 繼續拿牌 ?
@@ -25,5 +24,8 @@ while True:
         p = poker.pop()
         sum += getScore(p)
         print('再拿:', p, '總分:', sum)
+        if sum > 10.5:
+            print('User 爆了')
+            break
     else:
         break
