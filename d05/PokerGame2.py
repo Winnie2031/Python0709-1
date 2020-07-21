@@ -1,4 +1,5 @@
 import random
+import time
 
 def getScore(p):
     if p == 'A':
@@ -44,6 +45,7 @@ print('PC已拿:', p2, '總分:', sum)
 print('剩餘:', poker)
 
 while True:
+    time.sleep(2)  # 延遲 2 秒
     if sum >= 9:  # 電腦若為 9 點（含）以上不需補牌
         break
     elif sum < 7: # 電腦少於 7 點點需強迫補牌
