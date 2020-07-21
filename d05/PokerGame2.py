@@ -45,31 +45,35 @@ print('PC已拿:', p2, '總分:', sum2)
 print('剩餘:', poker)
 
 while True:
+    take = False  # 是否拿牌?
     time.sleep(2)  # 延遲 2 秒
     if sum2 >= 9:  # 電腦若為 9 點（含）以上不需補牌
         break
     elif sum2 < 7: # 電腦少於 7 點點需強迫補牌
-        p = poker.pop()
-        sum2 += getScore(p)
-        print('PC再拿:', p, '總分:', sum2)
+        take = True
     elif sum2 == 7 or sum2 == 7.5:
         amount = poker.count('A') + poker.count(2) + poker.count(3)
         if amount >= 10:
-            p = poker.pop()
-            sum2 += getScore(p)
-            print('PC再拿:', p, '總分:', sum2)
+            take = True
     elif sum2 == 8 or sum2 == 8.5:
         amount = poker.count('A') + poker.count(2)
         if amount >= 7:
-            p = poker.pop()
-            sum2 += getScore(p)
-            print('PC再拿:', p, '總分:', sum2)
+            take = True
 
+    # 是否拿牌 ?
+    if take:
+        p = poker.pop()
+        sum2 += getScore(p)
+        print('PC再拿:', p, '總分:', sum2)
+
+    # 判斷是否爆了 ?
     if sum2 > 10.5:
         print('PC 爆了')
         break
     else:
         count_pc += 1
+
+    # 判斷是否過五關 ?
     if count_pc == 5:
         print('PC 過五關, 超強的~~~')
         break
