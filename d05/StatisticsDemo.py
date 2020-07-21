@@ -26,3 +26,6 @@ print("平均:", mean)
 
 stdev = statistics.stdev(scores)
 print("標準差:", stdev)
+
+cv = stdev / mean
+print('變異係數:', cv)
