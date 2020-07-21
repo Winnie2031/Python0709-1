@@ -24,6 +24,6 @@ while True:
     if ask == 'y':
         p = poker.pop()
         sum += getScore(p)
-        print('再拿:' + p, '總分:', sum)
+        print('再拿:', p, '總分:', sum)
     else:
         break
