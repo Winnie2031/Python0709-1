@@ -17,7 +17,13 @@ balance = 100
 
 while True:
     # 下注
-    bet = int(input('請下注(不可超過 %d): ' % balance))
+    bet = int(input('請下注(不可超過 %d), 離開:-1: ' % balance))
+    if bet == -1:
+        print("User 目前餘額:", balance)
+        break
+    if bet > balance :
+        print("下注金額過大, 請重新下注! User 目前餘額:", balance)
+        continue
     # 牌局開始先發一張
     p1 = poker.pop()
     sum = getScore(p1)
@@ -83,3 +89,25 @@ while True:
             break
 
     # 判斷輸贏
+    # sum, count_user
+    # sum2, count_pc
+    if count_user == 5 and sum <= 10.5:
+        balance += bet
+        print('User 贏, 最新餘額:', balance)
+        continue  # 進入下一局
+    if (sum <= 10.5) and (sum2 > 10.5):
+        balance += bet
+        print('User 贏, 最新餘額:', balance)
+        continue  # 進入下一局
+    if (sum > sum2):
+        balance += bet
+        print('User 贏, 最新餘額:', balance)
+        continue  # 進入下一局
+    if (sum > 10.5 and sum2 > 10.5) or (sum == sum2):
+        print('和局, 最新餘額:', balance)
+        continue  # 進入下一局
+
+    # 一定是 PC 贏
+    balance -= bet
+    print('PC 贏, User 最新餘額:', balance)
+    continue  # 進入下一局
