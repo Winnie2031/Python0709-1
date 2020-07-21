@@ -15,4 +15,7 @@ for i in range(0, 10):
 
 print(a)
 print(b)
-
+mean_a, stdev_a, cv_a = getStat(a)
+mean_b, stdev_b, cv_b = getStat(b)
+print(mean_a, stdev_a, cv_a)
+print(mean_b, stdev_b, cv_b)
