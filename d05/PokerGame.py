@@ -18,6 +18,7 @@ print('已拿:', p1, '總分:', sum)
 print('剩餘:', poker)
 
 # 繼續拿牌 ?
+count_user = 0;
 while True:
     ask = input('是否要拿牌(y/n)? ')
     if ask == 'y':
@@ -26,6 +27,11 @@ while True:
         print('再拿:', p, '總分:', sum)
         if sum > 10.5:
             print('User 爆了')
+            break
+        else:
+            count_user += 1
+        if count_user == 5:
+            print('User 過五關, 超強的~~~')
             break
     else:
         break
