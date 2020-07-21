@@ -21,5 +21,8 @@ scores.__delitem__(len(scores)-1)
 scores.__delitem__(len(scores)-1)
 print(scores)
 
+mean = statistics.mean(scores)
+print("平均:", mean)
 
-
+stdev = statistics.stdev(scores)
+print("標準差:", stdev)
