@@ -8,7 +8,7 @@ def isPrime(n):
             break
     return bool
 
-if '__main__' == __name__ :
+if '__main__' == __name__ :  # Python 的主程式
     for n in range(2, 101):
         if isPrime(n):
             print(n)
