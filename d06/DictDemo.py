@@ -11,4 +11,9 @@ print('banana 幾元', fruits.setdefault('banana', 70))
 print(fruits)
 print('apple 幾元', fruits.setdefault('apple', 100))
 print(fruits)
-
+# 取得所有的 key 值
+names = fruits.keys()
+print(names, type(names))
+# 取得所有的 value 值
+values = fruits.values()
+print(values, type(values), sum(values))
