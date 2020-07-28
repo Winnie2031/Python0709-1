@@ -3,6 +3,12 @@ import json
 from math import radians, cos, sin, asin, sqrt
 # 桃園市民權路6號
 # 24.990042, 121.311989
+
+def appendDistance(lat, lng, youbikes):
+    for youboke in youbikes:
+        d = haversine(lat, lng, float(youboke.get("lat")), float(youboke.get("lng")))
+        youboke.setdefault("distance", d)
+
 def getYoubikes() -> list:
     limit = 500
     path = 'https://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&limit=%d'
@@ -38,5 +44,9 @@ if __name__ == '__main__':
     youboke = getYoubikeByName('桃園火車站(前站)', youbikes)
     d = haversine(24.990042, 121.311989, float(youboke.get("lat")), float(youboke.get("lng")))
     print(d, "公尺", youboke)
+    # 加入距離資訊
+    appendDistance(24.990042, 121.311989, youbikes)
+    print(youbikes)
+
 
 
