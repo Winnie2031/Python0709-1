@@ -4,6 +4,11 @@ from math import radians, cos, sin, asin, sqrt
 # 桃園市民權路6號
 # 24.990042, 121.311989
 
+def printYoubikesByDistance(m, youbikes):
+    for youbike in youbikes:
+        if youbike.get('distance') <= m:
+            print(youbike.get('sna'), youbike.get('distance'))
+
 def appendDistance(lat, lng, youbikes):
     for youboke in youbikes:
         d = haversine(lat, lng, float(youboke.get("lat")), float(youboke.get("lng")))
@@ -48,5 +53,6 @@ if __name__ == '__main__':
     appendDistance(24.990042, 121.311989, youbikes)
     print(youbikes)
 
+    printYoubikesByDistance(500, youbikes)
 
 
