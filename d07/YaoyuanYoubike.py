@@ -36,6 +36,7 @@ def haversine(lon1, lat1, lon2, lat2) -> int: # 經度1，緯度1，經度2，�
 if __name__ == '__main__':
     youbikes = getYoubikes()
     youboke = getYoubikeByName('桃園火車站(前站)', youbikes)
-    print(youboke)
+    d = haversine(24.990042, 121.311989, float(youboke.get("lat")), float(youboke.get("lng")))
+    print(d, "公尺", youboke)
 
 
