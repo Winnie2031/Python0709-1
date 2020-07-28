@@ -2,7 +2,7 @@ def calc(x=1, y=2) -> int :
     return x + y
 
 def calc2(x=None, y=None) -> int :
-    if x == None:
+    if x is None:
         print('使用者沒帶入x值')
         return 0
     if y == None:
